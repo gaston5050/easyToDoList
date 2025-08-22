@@ -1,6 +1,7 @@
 package com.example.easy2dolist;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 
@@ -21,10 +22,7 @@ import com.example.easy2dolist.model.Task;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Task dummies
-    Task task1 = new Task(1, "Task 1", "Description 1", Status.PENDING);
-    Task task2 = new Task(2, "Task 2", "Description 2", Status.COMPLETED);
-    log.d("TEST_TASK", "Task 1: " + task1.getTitle()) + task1.getDescription() + task1.getStatus();
+
 
 
 
@@ -33,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
+        //Task dummies
+        Task task1 = new Task(1, "Task 1", "Description 1", Status.PENDING);
+        Task task2 = new Task(2, "Task 2", "Description 2", Status.COMPLETED);
+        Log.d("TEST_TASK", "Task 1: " + task1.getTitle() + task1.getDescription()+ task1.getStatus());
+        Log.d("TEST_TASK", "Task 2: " + task2.getTitle() + task2.getDescription()+ task2.getStatus());
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
