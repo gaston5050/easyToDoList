@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.easy2dolist.model.Status;
 import com.example.easy2dolist.model.Task;
 
 import java.util.ArrayList;
@@ -18,14 +19,21 @@ public class TaskViewModel extends ViewModel {
     public LiveData<List<Task>> getTasks() {
         return tasks;
     }
-    public int nextId() {
-        return nextId++;
-    }
-    public void addTask(Task task) {
-        List<Task> list = new ArrayList<>(tasks.getValue());
-        list.add(task);
-        tasks.setValue(list);
+   //agegar una tarea a la lista poniendo titulo y descripcion
+
+    public void addTask(String title, String description) {
+     //Traingo la lista de tareas actual
+     List<Task> current = tasks.getValue();
+     //di es null la inicializo
+     if(current == null) current = new ArrayList<>();
+     //creó una copia de la lista para evitar errores
+        List<Task> copy = new ArrayList<>(current);
+        copy.add(new Task(nextId++, title, description, Status.PENDING));
+        tasks.setValue(copy);
 
     }
+
+
+
 
 }
