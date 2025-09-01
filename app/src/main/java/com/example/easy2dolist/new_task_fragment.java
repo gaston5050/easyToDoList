@@ -22,7 +22,8 @@ public class new_task_fragment extends Fragment {
     public new_task_fragment() {
         // Required empty public constructor
     }
-    public View onCreateView(LayoutInflater inflater, ViewGroup container){
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container) {
 
 
         return inflater.inflate(R.layout.fragment_new_task_fragment, container, false);
@@ -30,22 +31,19 @@ public class new_task_fragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated( View view, Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        });
-
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
         txtTitle = view.findViewById(R.id.txtTitle);
         txtDescription = view.findViewById(R.id.txtDescripcion);
         btnSave = view.findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(v ->{
-            String title = txtTitle.getText().toString();
-            String description = txtDescription.getText().toString();
-            viewModel.addTask(title, description);
+        btnSave.setOnClickListener(v -> {
+                    String title = txtTitle.getText().toString();
+                    String description = txtDescription.getText().toString();
+                    viewModel.addTask(title, description);
+                }
+
+        );
     }
+
 }
