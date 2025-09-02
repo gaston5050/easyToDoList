@@ -36,5 +36,5 @@
         android:id="@+id/nav_new_task"
         android:name="com.example.easy2dolist.new_task_fragment"
         android:label="Add new Task"
-        tools:layout="@layout/fragment_new_task_fragment" />
+        tools:layout="@layout/fragment_new_task" />
 </navigation>
